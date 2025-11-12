@@ -1,4 +1,5 @@
 import express from 'express';
+dotenv.config(); // <--- THIS WAS IN THE WRONG PLACE. IT'S NOW MOVED.
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { initializeDatabase, seedDatabase } from './database/db';
@@ -9,9 +10,10 @@ import studentFundsRoutes from './routes/studentFunds';
 import classFundsRoutes from './routes/classFunds';
 import reportsRoutes from './routes/reports';
 
-dotenv.config();
+
 
 const app = express();
+// ...
 const PORT = process.env.PORT || 3001;
 
 // Middleware
